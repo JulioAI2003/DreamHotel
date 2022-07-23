@@ -46,7 +46,7 @@ public class SepararActivity extends AppCompatActivity implements View.OnClickLi
         btnconfirmar = findViewById(R.id.btnconfirmar);
         txvpreciop = findViewById(R.id.txvprecio);
 
-        String [] items={"Matrimonial", "Familiar", "Personal", "Suit"};
+        String [] items={"Matrimonial", "Familiar", "Personal", "Suit","Residencial"};
         ArrayAdapter<String> itemAdapter = new ArrayAdapter<>(SepararActivity.this , R.layout.listaitems, items);
         autoCompleteTextView.setAdapter(itemAdapter);
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
