@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EC3-Grupo7</string>
+    <string name="user">Mail</string>
+    <string name="password">Password</string>
+    <string name="login">Log in</string>
+    <string name="registrar">Register</string>
+    <string name="Rregistrar">Register you</string>
+    <string name="titulo">Welcome a dream hotel</string>
+    <string name="titreg">Register a User</string>
+
+
+    //registrar
+
+    <string name="nom">Name</string>
+    <string name="ape">Surnames</string>
+    <string name="n_f">+ Date</string>
+    <string name="Rpassword">Please enter a password</string>
+    <string name="Reppassword">Write the password again</string>
+    <string name="fechaN">Date of Birth</string>
+    <string name="gmail">Gmail</string>
+    <string name="habitacion">Select a room</string>
+    <string name="terminos">I accept the terms and conditions</string>
+    <string name="smsRegistrar">You do not have an account?</string>
+    <string name="smslogin">Do you already have an account?</string>
+    <string name="btnlogin">Get into</string>
+    <string name="cc">Number of characters:</string>
+    <string name="mc">The "'@gmail.com'" is compulsory</string>
+
+
+    <string name="select">Select the Bank</string>
+
+    <string name="simple">Admission date</string>
+
+    <string name="simple2">Departure date</string>
+
+    <string name="button">Confirm</string>
+
+    <string name="edtcuenta">Enter the Card Number</string>
+
+    <string name="Gracias">RESERVA EXITOSA</string>
+    <string name="Reseva">Se le envió un mensaje a su correo indicando la boleta de reserva según el contrato.</string>
+    <string name="Volver">Volver al menú</string>
+
+
+</resources>

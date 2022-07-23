@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">EC2-Grupo7</string>
+    <string name="user">Correo</string>
+    <string name="password">Contraseña</string>
+    <string name="login">Ingresar</string>
+    <string name="registrar">Registrarse</string>
+    <string name="Rregistrar">Registrate</string>
+    <string name="titulo">Bienvenido a dream hotel</string>
+    <string name="titreg">Registre un Usuario</string>
+
+
+    //registrar
+
+    <string name="nom">Nombre</string>
+    <string name="ape">Apellidos</string>
+    <string name="n_f">+ Fecha</string>
+    <string name="Rpassword">Ingrese una contraseña</string>
+    <string name="Reppassword">Vuelva a escribir la contraseña</string>
+    <string name="fechaN">Fecha de nacimiento</string>
+    <string name="gmail">Correo Electronico</string>
+    <string name="habitacion">Seleccione una habitacion</string>
+    <string name="terminos">Acepto los terminos y condiciones</string>
+    <string name="smsRegistrar">¿No tienes una cuenta?</string>
+    <string name="smslogin">¿Ya tienes una cuenta?</string>
+    <string name="btnlogin">Iniciar Sesion</string>
+    <string name="cc">Cantidad de caracteres:</string>
+    <string name="mc">El "'@gmail.com'" es obligatorio</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string name="select">Selecciona el Banco</string>
+
+    <string name="simple">Fecha Ingreso</string>
+
+    <string name="simple2">Fecha Salida</string>
+
+    <string name="button">Confirmar</string>
+
+    <string name="edtcuenta">Ingrese el Nùmero de Tarjeta</string>
+
+    <string name="Gracias">RESERVA EXITOSA</string>
+    <string name="Reseva">Se le envió un mensaje a su correo indicando la boleta de reserva según el contrato.</string>
+    <string name="Volver">Volver al login</string>
+
+
+</resources>
