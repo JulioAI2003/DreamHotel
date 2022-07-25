@@ -55,7 +55,7 @@ public class Hoteles extends AppCompatActivity {
     public List<Hotel> ObtenerHoteles(){
         ArrayList<Hotel> hoteles = new ArrayList<>();
         hoteles.add(new Hotel("Dulces Sueños",R.drawable.hotel1,"Aire acondicionado incluido, Musica de fondo, Luces de colores",50.00,5));
-        hoteles.add(new Hotel("Amanecida",R.drawable.hotel2,"Aire acondicionado incluido,",60.00,4));
+        hoteles.add(new Hotel("Amanecida",R.drawable.hotel2,"Aire acondicionado incluido,",60.00,5));
         hoteles.add(new Hotel("Tormentas",R.drawable.hotel3,"Aire acondicionado incluido con wifi,",60.00,5));
         hoteles.add(new Hotel("Cielo Rojo",R.drawable.hotel4,"Aire acondicionado incluido sin wifi,",60.00,4));
         hoteles.add(new Hotel("Matrimonio",R.drawable.hotel5,"Aire acondicionado incluido con piscina,",60.00,5));
