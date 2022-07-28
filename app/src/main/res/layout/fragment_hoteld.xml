@@ -1,58 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/azul"
-    android:orientation="vertical"
-    android:padding="30px"
-    tools:context=".Detalle_hotel_Activity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="53dp"
-        android:background="@color/gris_claro"
-        android:orientation="horizontal"
-        android:paddingLeft="20px"
-        android:paddingTop="5px"
-        android:paddingRight="20px"
-        android:paddingBottom="5px">
-
-        <TextView
-            android:id="@+id/qwe"
-            android:layout_width="362dp"
-            android:layout_height="52dp"
-            android:layout_weight="1"
-            android:background="@color/blanco"
-            android:fontFamily="sans-serif-light"
-            android:gravity="center"
-            android:textSize="20dp" />
-
-        <ImageButton
-            android:id="@+id/ibbebidas"
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="200dp"
-            android:layout_height="52dp"
-            android:layout_weight="1"
-            android:background="@color/blanco"
-            android:padding="30dp"
-            app:srcCompat="@drawable/ic_user" />
-
-        <ImageButton
-            android:id="@+id/asds"
-            android:layout_width="180dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ic_salir" />
-
-    </LinearLayout>
+    tools:context=".HotelDFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/blanco"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/imagenhotel"
@@ -169,19 +125,21 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.844" />
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView"
-            android:name="com.example.actividad_login_registro.HotelDFragment"
-            android:layout_width="218dp"
-            android:layout_height="493dp"
+
+        <TextView
+            android:id="@+id/txvtituloHD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="platos"
+            android:textSize="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.578"
+            app:layout_constraintHorizontal_bias="0.472"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.407" />
-
+            app:layout_constraintVertical_bias="0.754" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</LinearLayout>
+
+</FrameLayout>

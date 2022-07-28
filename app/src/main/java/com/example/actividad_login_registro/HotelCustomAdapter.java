@@ -37,8 +37,6 @@ public class HotelCustomAdapter extends RecyclerView.Adapter<HotelCustomAdapter.
             btndetalles = itemView.findViewById(R.id.btndetalles);
             rbestrellas = itemView.findViewById(R.id.rbestrellas);
 
-
-
         }
     }
     private List<Hotel> listahoteles;
@@ -79,7 +77,7 @@ public class HotelCustomAdapter extends RecyclerView.Adapter<HotelCustomAdapter.
         holder.btndetalles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { //envia los datos mediante variables ala vista detalle
-                Intent intent = new Intent(v.getContext(), Detalle_hotel_Activity.class);
+                Intent intent = new Intent(v.getContext(),Detalle_hotel_Activity.class);
                 intent.putExtra("Nombre",nombreHotel);
 
                 intent.putExtra("Imagen",imagen);
