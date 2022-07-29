@@ -44,7 +44,7 @@ public class SepararActivity extends AppCompatActivity implements View.OnClickLi
         textView = findViewById(R.id.itemSelected);
         btncancelar = findViewById(R.id.btncancelar);
         btnconfirmar = findViewById(R.id.btnconfirmar);
-        txvpreciop = findViewById(R.id.txvprecio);
+        //txvpreciop = findViewById(R.id.txvprecio);
 
         String [] items={"Matrimonial", "Familiar", "Personal", "Suit","Amigos"};
         ArrayAdapter<String> itemAdapter = new ArrayAdapter<>(SepararActivity.this , R.layout.listaitems, items);

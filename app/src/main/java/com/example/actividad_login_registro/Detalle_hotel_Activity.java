@@ -1,6 +1,8 @@
 package com.example.actividad_login_registro;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,57 +16,21 @@ import java.util.List;
 
 public class Detalle_hotel_Activity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_hotel);
+
         Bundle bundle =getIntent().getExtras();
-        String nombre = bundle.getString("Nombre");
-        Integer imagen = bundle.getInt("Imagen");
-        double precio = bundle.getDouble("precio");
-        String descripcion = bundle.getString("descripcion");
+        String nombreD = bundle.getString("Nombre");
+        Integer imagenD = bundle.getInt("Imagen");
+        String descripcionD = bundle.getString("descripcion");
+        double precioD = bundle.getDouble("precio");
 
-
-        TextView nombreD = findViewById(R.id.txvNombreHotel);
-        ImageView imagenD = findViewById(R.id.imagenhotel);
-        TextView precioD = findViewById(R.id.txvprecio);
-        TextView descripcionD = findViewById(R.id.txvdescripcion);
-        Button btnseparar = findViewById(R.id.btnseparar);
-
-        nombreD.setText(nombre);
-        imagenD.setImageResource(imagen);
-        precioD.setText(Double.toString(precio));
-        descripcionD.setText(descripcion);
-
-        ImageButton ibbebidas = findViewById(R.id.ibbebidas);
-        ibbebidas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mostrarDatos(nombreD.getText().toString());
-            }
-        });
-
-        Button btnsalir = findViewById(R.id.btnsalir);
-        btnsalir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                finish ();
-            }
-        });
-
-        btnseparar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent in = new Intent(Detalle_hotel_Activity.this,SepararActivity.class);
-                //iniciar el intent
-                startActivity(in);
-            }
-        });
+        MostrarFragmento(nombreD, descripcionD,precioD, imagenD);
     }
-    void mostrarDatos(String datos){
-        HotelDFragment hotelDFragment = (HotelDFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);//accede al fragment mediante su id
-         hotelDFragment.mostrarSeccion(datos);
+    public void MostrarFragmento(String nombre, String descripcion, double precio, Integer imagen){
+        HotelDFragment hotelDFragment = (HotelDFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentDatosHotel);
+        hotelDFragment.mostrarDatos(nombre, descripcion, precio, imagen);
     }
 }

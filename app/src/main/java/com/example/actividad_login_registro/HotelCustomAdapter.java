@@ -1,6 +1,7 @@
 package com.example.actividad_login_registro;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +28,7 @@ public class HotelCustomAdapter extends RecyclerView.Adapter<HotelCustomAdapter.
         private ImageView imagen;
         Button btndetalles;
         RatingBar rbestrellas;
+        Activity activity;
 
         // constructor de ViewHolder que toma los datos y los guarda en su atributo respectivo
         public ViewHolder(@NonNull View itemView){
@@ -79,7 +81,6 @@ public class HotelCustomAdapter extends RecyclerView.Adapter<HotelCustomAdapter.
             public void onClick(View v) { //envia los datos mediante variables ala vista detalle
                 Intent intent = new Intent(v.getContext(),Detalle_hotel_Activity.class);
                 intent.putExtra("Nombre",nombreHotel);
-
                 intent.putExtra("Imagen",imagen);
                 intent.putExtra("descripcion",descripcion);
                 intent.putExtra("precio",precio);

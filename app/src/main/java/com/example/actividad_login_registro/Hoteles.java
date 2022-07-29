@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +16,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.actividad_login_registro.interfaces.iComunicaFragments;
 import com.example.actividad_login_registro.model.Hotel;
 
 import java.io.CharArrayReader;
@@ -25,6 +28,9 @@ public class Hoteles extends AppCompatActivity {
     RecyclerView recyclerViewhotel;
     HotelCustomAdapter adaptadorhotel;
     ImageButton ibsalir;
+
+    Activity activity;
+    iComunicaFragments iComunicaFragments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,18 +67,15 @@ public class Hoteles extends AppCompatActivity {
         hoteles.add(new Hotel("Matrimonio",R.drawable.hotel5,"Aire acondicionado incluido con piscina,",60.00,5));
 
         return hoteles;
-
-
     }
+
+
     void EnlazarControles() {
         recyclerViewhotel = findViewById(R.id.recyclerhoteles);
-
         recyclerViewhotel.setLayoutManager(new LinearLayoutManager(this));
         adaptadorhotel = new HotelCustomAdapter(ObtenerHoteles());
         recyclerViewhotel.setAdapter(adaptadorhotel);
-
         I_Usuario = findViewById(R.id.I_Usuario);
         ibsalir = findViewById(R.id.ibsalir);
     }
-
 }
