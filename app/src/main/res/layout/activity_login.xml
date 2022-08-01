@@ -181,7 +181,7 @@
                     app:srcCompat="@drawable/ic_twitter" />
 
                 <ImageButton
-                    android:id="@+id/gmail"
+                    android:id="@+id/btncrear"
                     style="?attr/materialButtonOutlinedStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

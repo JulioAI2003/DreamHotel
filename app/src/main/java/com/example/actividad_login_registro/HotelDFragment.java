@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class HotelDFragment extends Fragment {
     public TextView nombreF, precioF, descripcionF;
     public ImageView imagenF;
@@ -26,19 +29,22 @@ public class HotelDFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull  View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        /*
         nombreF = view.findViewById(R.id.txvNombreHotelF);
         imagenF = view.findViewById(R.id.imagenhotelF);
         precioF = view.findViewById(R.id.txvprecioF);
         descripcionF = view.findViewById(R.id.txvdescripcionF);
         btnsepararF = view.findViewById(R.id.btnsepararF);
-
+*/
     }
+
+/*
    void mostrarDatos(String nombre, String descripcion, double precio, Integer imagen){
-       nombreF.setText(nombre);
-       descripcionF.setText(descripcion);
-       precioF.setText(Double.toString(precio));
-       imagenF.setImageResource(imagen);
+               nombreF.setText(nombre);
+               descripcionF.setText(descripcion);
+               precioF.setText(Double.toString(precio));
+               imagenF.setImageResource(imagen);
 
-    }
+    }*/
 
 }

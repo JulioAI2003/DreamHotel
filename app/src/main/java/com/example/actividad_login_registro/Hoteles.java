@@ -46,7 +46,6 @@ public class Hoteles extends AppCompatActivity {
         char l1 = Character.toUpperCase(part1.charAt(0));
         String part = part1.replace(part1.charAt(0), l1);
 
-        System.out.println(part);
         Toast.makeText(this, "Bienvenido: " + part, Toast.LENGTH_SHORT).show();
         I_Usuario.setText(part);
         ibsalir.setOnClickListener(new View.OnClickListener() {
