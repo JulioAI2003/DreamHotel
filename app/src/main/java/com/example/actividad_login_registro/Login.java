@@ -3,14 +3,17 @@ package com.example.actividad_login_registro;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.actividad_login_registro.dao.UsuarioDao;
+import com.example.actividad_login_registro.db.DbHelper;
 import com.example.actividad_login_registro.model.Usuario;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -24,6 +27,7 @@ public class Login extends AppCompatActivity {
     private TextInputEditText txtusuario, txtLcontrasena;
     private Button btnRregistrar, btniniciarsesion;
     private UsuarioDao dao;
+    private ImageButton btncrear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,19 @@ public class Login extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        btncrear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DbHelper dbHelper = new DbHelper(Login.this);
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                if (db != null){
+                    Toast.makeText(Login.this, "BASE DE DATOS CREADA", Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Toast.makeText(Login.this, "ERROR AL CREAR  LA BASE DE DATOS", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     void EnlazarControles() {
@@ -51,6 +68,7 @@ public class Login extends AppCompatActivity {
         txtLcontrasena = findViewById(R.id.txtLcontrasena);
         btnRregistrar = findViewById(R.id.btnRregistrar);
         btniniciarsesion = findViewById(R.id.btniniciarsesion);
+        btncrear = findViewById(R.id.btncrear);
     }
 
     public void Btniniciarsesion(View v) {
