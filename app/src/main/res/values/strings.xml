@@ -41,6 +41,8 @@
     <string name="Gracias">RESERVA EXITOSA</string>
     <string name="Reseva">Se le envió un mensaje a su correo indicando la boleta de reserva según el contrato.</string>
     <string name="Volver">Volver al login</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

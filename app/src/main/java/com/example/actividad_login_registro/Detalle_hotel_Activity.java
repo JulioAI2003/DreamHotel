@@ -37,7 +37,6 @@ public class Detalle_hotel_Activity extends AppCompatActivity {
         precioD.setText(Double.toString(precio));
         descripcionD.setText(descripcion);
 
-        ImageButton ibbebidas = findViewById(R.id.ibbebidas);
 
         /*ibbebidas.setOnClickListener(new View.OnClickListener() {
             @Override

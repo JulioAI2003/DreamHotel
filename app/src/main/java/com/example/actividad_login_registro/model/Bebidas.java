@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class Bebidas {
+    private int id;
     private String nombre;
     private String descripcion;
     private Integer imagen;

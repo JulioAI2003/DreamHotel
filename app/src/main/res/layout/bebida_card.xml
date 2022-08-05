@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    app:cardElevation="4dp"
-    app:cardCornerRadius="2dp"
-    app:cardUseCompatPadding="true">
-
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="281dp"
+        android:layout_width="wrap_content"
+        android:layout_height="189dp"
         android:background="@color/gris_claro"
         android:orientation="vertical"
         android:padding="10sp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="253dp"
+            android:layout_width="372dp"
+            android:layout_height="164dp"
             android:background="@color/blanco"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,11 +25,11 @@
             tools:layout_editor_absoluteY="14dp">
 
             <TextView
-                android:id="@+id/txvNombreHotelCard"
+                android:id="@+id/txtnombrebebida"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hawai"
-                app:layout_constraintBottom_toTopOf="@+id/ivimagenCard"
+                android:text="Black Label"
+                app:layout_constraintBottom_toTopOf="@+id/ivbebida"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintStart_toStartOf="parent"
@@ -42,36 +37,22 @@
                 app:layout_constraintVertical_bias="0.28" />
 
             <ImageView
-                android:id="@+id/ivimagenCard"
-                android:layout_width="262dp"
-                android:layout_height="152dp"
+                android:id="@+id/ivbebida"
+                android:layout_width="134dp"
+                android:layout_height="136dp"
+                android:scaleType="fitStart"
+                android:scaleX="1"
+                android:scaleY="1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.085"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.243"
-                app:srcCompat="@drawable/hotel1" />
-
-
-            <RatingBar
-                android:id="@+id/rbestrellas"
-                android:layout_width="237dp"
-                android:layout_height="42dp"
-                android:layout_margin="10px"
-                android:layout_weight="1"
-                android:isIndicator="true"
-                android:numStars="5"
-                android:progressTint="@color/celeste"
-                android:rating="3"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.026"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.962" />
+                app:layout_constraintVertical_bias="0.636"
+                app:srcCompat="@drawable/black_label" />
 
             <Button
-                android:id="@+id/btndetalles"
+                android:id="@+id/bebidadetalles"
                 android:layout_width="114dp"
                 android:layout_height="45dp"
                 android:layout_margin="20px"
@@ -79,15 +60,14 @@
                 android:text="Detalles"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.895"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="0.615" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </LinearLayout>
-
 
 </androidx.cardview.widget.CardView>

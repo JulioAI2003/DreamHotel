@@ -10,7 +10,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NOMBRE = "dream_hotel.db";
-    private static final String TABLE_BEBIDAS = "t_bebidas";
+    public static final String TABLE_BEBIDAS = "t_bebidas";
 
     public DbHelper(@Nullable Context context) {
         super(context,DATABASE_NOMBRE, null, DATABASE_VERSION);
@@ -23,7 +23,8 @@ public class DbHelper extends SQLiteOpenHelper {
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "nombre TEXT NOT NULL," +
                 "descripcion TEXT NOT NULL," +
-                "imagen INTEGER NOT NULL)");
+                "imagen INTEGER NOT NULL," +
+                "precio INTEGER NOT NULL)");
     }
 
     @Override

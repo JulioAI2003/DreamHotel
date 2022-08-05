@@ -1,6 +1,9 @@
 package com.example.actividad_login_registro;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -12,11 +15,14 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.actividad_login_registro.model.Bebidas;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class SepararActivity extends AppCompatActivity implements View.OnClickListener {
@@ -30,6 +36,12 @@ public class SepararActivity extends AppCompatActivity implements View.OnClickLi
     Button bfecha, bfecha2, btnconfirmar, btncancelar;
 
     EditText simple, simple2, edtcuenta;
+    ImageButton btnbebidas, btnplatos;
+
+    FragmentTransaction transaction;
+    Fragment fragmentbebidas, fragmentHotel, fragmentPago;
+    RecyclerView listaBebidas;
+    ArrayList<Bebidas> listaArrayBebidas;
 
     private TextInputLayout numcuenta;
 
@@ -38,27 +50,25 @@ public class SepararActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_separar);
+        //enlazar_controles();
 
-        textInputLayout = findViewById(R.id.menu_drop);
-        autoCompleteTextView = findViewById(R.id.drop_items);
-        textView = findViewById(R.id.itemSelected);
-        btncancelar = findViewById(R.id.btncancelar);
-        btnconfirmar = findViewById(R.id.btnconfirmar);
-        //txvpreciop = findViewById(R.id.txvprecio);
+        fragmentbebidas = new BebidaFragment();
+        fragmentHotel = new HotelDFragment();
+        fragmentPago = new PagoFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragmentsepararactivity,fragmentPago).commit();
 
-        String [] items={"Matrimonial", "Familiar", "Personal", "Suit","Amigos"};
-        ArrayAdapter<String> itemAdapter = new ArrayAdapter<>(SepararActivity.this , R.layout.listaitems, items);
+        /*String [] items={"Matrimonial", "Familiar", "Personal", "Suit","Amigos"};
+        ArrayAdapter<String> itemAdapter = new ArrayAdapter<>(SepararActivity.this, R.layout.listaitems, items);
         autoCompleteTextView.setAdapter(itemAdapter);
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 textView.setText((String)parent.getItemAtPosition(position));
             }
-        });
+        });*/
 
 
-
-        bfecha = (Button)findViewById(R.id.bfecha);
+        /*bfecha = (Button)findViewById(R.id.bfecha);
         simple = (EditText) findViewById(R.id.simple);
 
         bfecha.setOnClickListener(this);
@@ -74,14 +84,49 @@ public class SepararActivity extends AppCompatActivity implements View.OnClickLi
             public void onClick(View view) {
                 finish();
             }
-        });
+        });*/
+
+
+        /*listaBebidas = findViewById(R.id.fragmentBebidas);
+        listaBebidas.setLayoutManager(new LinearLayoutManager(this));
+
+        DbBebidas dbBebidas = new DbBebidas(SepararActivity.this);
+
+        listaArrayBebidas = new ArrayList<>();
+
+        BebidaCustomAdapter adapter = new BebidaCustomAdapter(dbBebidas.mostrarBebidas());
+        listaBebidas.setAdapter(adapter);*/
+
+        //trae datos de customadapter
+        /*Bundle bundle = getIntent().getExtras();
+        String nombreDB = bundle.getString("Nombre_bebida");
+        Integer imagenDB = bundle.getInt("Imagen_bebida");*/
+
+        /*btnbebidas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //MostrarFragmento(nombreDB,imagenDB);
+                transaction = getSupportFragmentManager().beginTransaction();
+                switch (view.getId()){
+                    case R.id.btnbebidas: transaction.replace(R.id.fragmetcontenedorbebidas,fragmentbebidas);
+                    transaction.addToBackStack(null);
+                    break;
+                    case R.id.btnplatos: transaction.replace(R.id.fragmetcontenedorbebidas,fragmentHotel);
+                        transaction.addToBackStack(null);
+                        break;
+
+                }
+                transaction.commit();
+
+            }
+        });*/
 
     }
     private void init(){
         numcuenta = findViewById(R.id.numcuenta);
         edtcuenta = findViewById(R.id.edtcuenta);
     }
-
+/*
     public void Registrar(View view){
         String fechai = simple.getText().toString();
         String fechas = simple2.getText().toString();
@@ -106,10 +151,22 @@ public class SepararActivity extends AppCompatActivity implements View.OnClickLi
             });
             Toast.makeText(this, "Reserva en proceso", Toast.LENGTH_LONG).show();
         }
-    }
+    }¨*/
 
     @Override
     public void onClick(View v) {
+        transaction = getSupportFragmentManager().beginTransaction();
+        switch (v.getId()){
+            case R.id.btnbebidas: transaction.replace(R.id.fragmentsepararactivity,fragmentbebidas);
+                transaction.addToBackStack(null); //retroceder la accion anterior
+                break;
+            case R.id.btnplatos: transaction.replace(R.id.fragmentsepararactivity,fragmentHotel);
+                transaction.addToBackStack(null);
+                break;
+
+        }
+        transaction.commit();
+/*
         if (v == bfecha) {
             final Calendar c = Calendar.getInstance();
             dia = c.get(Calendar.DAY_OF_MONTH);
@@ -140,6 +197,22 @@ public class SepararActivity extends AppCompatActivity implements View.OnClickLi
                     , dia2, mes2, ano2);
             datePickerDialog.show();
 
-        }
+        }*/
     }
+    void enlazar_controles(){
+        textInputLayout = findViewById(R.id.menu_drop);
+        autoCompleteTextView = findViewById(R.id.drop_items);
+        textView = findViewById(R.id.itemSelected);
+        btncancelar = findViewById(R.id.btncancelar);
+        btnconfirmar = findViewById(R.id.btnconfirmar);
+        btnbebidas = findViewById(R.id.btnbebidas);
+        btnplatos = findViewById(R.id.btnplatos);
+        //txvpreciop = findViewById(R.id.txvprecio);
+
+    }
+
+    /*public void MostrarFragmento(String nombre, Integer imagen){
+        BebidaFragment bebidaFragment = (BebidaFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentBebidas);
+        bebidaFragment.mostrarDatos(nombre,imagen);
+    }*/
 }
