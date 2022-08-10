@@ -1,5 +1,6 @@
 package com.example.actividad_login_registro;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,40 +15,43 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.actividad_login_registro.db.ConexionDB;
 import com.example.actividad_login_registro.model.Bebidas;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BebidaFragment extends Fragment {
 
-    public TextView nombreB;
-    public ImageView imagenB;
+
+    RecyclerView listaBebidas;
+    Context contexto;
+    ConexionDB db;
+    BebidaCustomAdapter adaptador;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_bebida, container, false);
+        contexto = getActivity();
+        System.out.println(contexto);
+        View view = inflater.inflate(R.layout.fragment_bebida, container, false);
+
+        listaBebidas = view.findViewById(R.id.bebidasRV);
+        listaBebidas.setLayoutManager(new LinearLayoutManager(contexto));
+        db = ConexionDB.getInstancia(contexto);
+        adaptador = new BebidaCustomAdapter(db.dao().listar());
+        listaBebidas.setAdapter(adaptador);
+        return view;
 
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        nombreB = view.findViewById(R.id.txtnombrebebida);
-        imagenB = view.findViewById(R.id.ivbebida);
+        listaBebidas = view.findViewById(R.id.bebidasRV);
     }
 
-    public ArrayList<Bebidas> ObtenerBebidas(){
-        ArrayList<Bebidas> bebidas = new ArrayList<>();
+    public List<Bebidas> ObtenerBebidas(){
+        List<Bebidas> bebidas = db.dao().listar();
         return bebidas;
     }
-    public void mostrarDatos(String nombre, Integer imagen) {
-        nombreB.setText(nombre);
-        imagenB.setImageResource(imagen);
-    }
-        /*void EnlazarControles() {
-            recyclerViewBebida = findViewById(R.id.recyclerbebidas);
-            recyclerViewBebida.setLayoutManager(new LinearLayoutManager(this));
-            adaptadorBebida = new BebidaCustomAdapter(ObtenerBebidas());
-            recyclerViewBebida.setAdapter(adaptadorBebida);
-        }*/
 }

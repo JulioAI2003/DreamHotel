@@ -2,24 +2,16 @@ package com.example.actividad_login_registro;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
-import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.actividad_login_registro.interfaces.iComunicaFragments;
 import com.example.actividad_login_registro.model.Hotel;
 
-import java.io.CharArrayReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,9 +20,6 @@ public class Hoteles extends AppCompatActivity {
     RecyclerView recyclerViewhotel;
     HotelCustomAdapter adaptadorhotel;
     ImageButton ibsalir;
-
-    Activity activity;
-    iComunicaFragments iComunicaFragments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -3,6 +3,7 @@ package com.example.actividad_login_registro;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -69,6 +70,7 @@ public class PagoFragment extends Fragment {
 
         edtcuenta = (EditText) view.findViewById(R.id.edtcuenta);
 
+
         //bfecha2.setOnClickListener(this);
         /*btncancelar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,9 +79,9 @@ public class PagoFragment extends Fragment {
             }
         });*/
 
-        String [] items={"Matrimonial", "Familiar", "Personal", "Suit","Amigos"};
-        ArrayAdapter<String> itemAdapter = new ArrayAdapter<>(PagoFragment.this, R.layout.listaitems, items);
-        autoCompleteTextView.setAdapter(itemAdapter);
+        //String [] items={"Matrimonial", "Familiar", "Personal", "Suit","Amigos"};
+        //ArrayAdapter<String> itemAdapter = new ArrayAdapter<>(PagoFragment.this, R.layout.listaitems, items);
+        //autoCompleteTextView.setAdapter(itemAdapter);
         /*autoCompleteTextView.setOnItemClickListener(new AdapterView<>().OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

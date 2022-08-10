@@ -11,25 +11,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Entity(tableName = "Bebidas")
-public class Bebidas {
+@Entity(tableName = "Comidas")
+public class Comidas {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id_bebida")
+    @ColumnInfo(name = "id_comida")
     private int id;
-    @ColumnInfo(name = "nombebida")
+    @ColumnInfo(name = "nomcomida")
     private String nombre;
-    @ColumnInfo(name = "desbebida")
+    @ColumnInfo(name = "descomida")
     private String descripcion;
     @ColumnInfo(name = "url")
     private String imagen;
-    @ColumnInfo(name = "prebebida")
+    @ColumnInfo(name = "precomida")
     private double precio;
-
-    public Bebidas(String nombre, String descripcion, String imagen, double precio) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.imagen = imagen;
-        this.precio = precio;
-    }
 }

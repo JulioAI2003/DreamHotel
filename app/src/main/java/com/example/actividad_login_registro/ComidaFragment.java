@@ -13,17 +13,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
-public class HotelDFragment extends Fragment {
+public class ComidaFragment extends Fragment {
     public TextView nombreF, precioF, descripcionF;
     public ImageView imagenF;
     public Button btnsepararF;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_hoteld, container, false);
+        return inflater.inflate(R.layout.fragment_comida, container, false);
     }
 
     @Override

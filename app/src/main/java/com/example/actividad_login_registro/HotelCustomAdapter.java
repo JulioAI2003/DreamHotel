@@ -54,7 +54,7 @@ public class HotelCustomAdapter extends RecyclerView.Adapter<HotelCustomAdapter.
         //LayoutInflater: tomar un elemento xml(layout.xml) y cargarlo como un objeto visual para que se pueda utilizar
         //inflate: carga en memoria el layout que se quiere mostrar
         //la cual se mostrara en un objeto de tipo View
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.hotel_card,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_hotel,parent,false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
