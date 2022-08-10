@@ -25,4 +25,11 @@ public class Comidas {
     private String imagen;
     @ColumnInfo(name = "precomida")
     private double precio;
+
+    public Comidas(String nombre, String descripcion, String imagen, double precio) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.imagen = imagen;
+        this.precio = precio;
+    }
 }

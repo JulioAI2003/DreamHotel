@@ -72,12 +72,12 @@ public class PagoFragment extends Fragment {
 
 
         //bfecha2.setOnClickListener(this);
-        /*btncancelar.setOnClickListener(new View.OnClickListener() {
+        btncancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                getActivity().finish();
             }
-        });*/
+        });
 
         //String [] items={"Matrimonial", "Familiar", "Personal", "Suit","Amigos"};
         //ArrayAdapter<String> itemAdapter = new ArrayAdapter<>(PagoFragment.this, R.layout.listaitems, items);

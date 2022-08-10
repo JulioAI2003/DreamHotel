@@ -22,8 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BebidaFragment extends Fragment {
-
-
     RecyclerView listaBebidas;
     Context contexto;
     ConexionDB db;
@@ -48,10 +46,5 @@ public class BebidaFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         listaBebidas = view.findViewById(R.id.bebidasRV);
-    }
-
-    public List<Bebidas> ObtenerBebidas(){
-        List<Bebidas> bebidas = db.dao().listar();
-        return bebidas;
     }
 }

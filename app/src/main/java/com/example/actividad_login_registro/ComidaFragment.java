@@ -1,47 +1,42 @@
 package com.example.actividad_login_registro;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
+
+import com.example.actividad_login_registro.db.ConexionDB;
 
 public class ComidaFragment extends Fragment {
-    public TextView nombreF, precioF, descripcionF;
-    public ImageView imagenF;
-    public Button btnsepararF;
+    RecyclerView listacomidas;
+    Context contexto;
+    ConexionDB db;
+    ComidaCustomAdapter adaptador;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_comida, container, false);
+        contexto = getActivity();
+        View view = inflater.inflate(R.layout.fragment_comida, container, false);
+
+        listacomidas = view.findViewById(R.id.comidasRV);
+        listacomidas.setLayoutManager(new LinearLayoutManager(contexto));
+        db = ConexionDB.getInstancia(contexto);
+        adaptador = new ComidaCustomAdapter(db.daoC().listar());
+        listacomidas.setAdapter(adaptador);
+        return view;
     }
 
     @Override
     public void onViewCreated(@NonNull  View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        /*
-        nombreF = view.findViewById(R.id.txvNombreHotelF);
-        imagenF = view.findViewById(R.id.imagenhotelF);
-        precioF = view.findViewById(R.id.txvprecioF);
-        descripcionF = view.findViewById(R.id.txvdescripcionF);
-        btnsepararF = view.findViewById(R.id.btnsepararF);
-*/
+        listacomidas = view.findViewById(R.id.comidasRV);
     }
-
-/*
-   void mostrarDatos(String nombre, String descripcion, double precio, Integer imagen){
-               nombreF.setText(nombre);
-               descripcionF.setText(descripcion);
-               precioF.setText(Double.toString(precio));
-               imagenF.setImageResource(imagen);
-
-    }*/
-
 }

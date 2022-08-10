@@ -16,7 +16,7 @@ public abstract class ConexionDB extends RoomDatabase {
 
     private static ConexionDB instancia;
     public abstract BebidaDao dao();
-    //public abstract Comidas cdao();
+    public abstract ComidaDao daoC();
 
     public static ConexionDB getInstancia(Context c){
         if (instancia ==null){

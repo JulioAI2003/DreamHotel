@@ -21,7 +21,6 @@ public class BebidaCustomAdapter extends RecyclerView.Adapter<BebidaCustomAdapte
         private TextView descripcion;
         private ImageView imagen;
         private TextView precio;
-        private ImageButton btnseparar;
         Context contexto;
 
         public BebidaViewHolder(@NonNull View itemView) {

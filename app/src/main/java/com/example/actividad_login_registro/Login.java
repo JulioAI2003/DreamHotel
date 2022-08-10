@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.example.actividad_login_registro.dao.UsuarioDao;
 import com.example.actividad_login_registro.db.ConexionDB;
 import com.example.actividad_login_registro.model.Bebidas;
+import com.example.actividad_login_registro.model.Comidas;
 import com.example.actividad_login_registro.model.Usuario;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -76,7 +77,20 @@ public class Login extends AppCompatActivity {
                 ConexionDB.getInstancia(Login.this).dao().create(b7);
                 ConexionDB.getInstancia(Login.this).dao().create(b8);
 
-                ConexionDB.getInstancia(Login.this).dao().listar();
+                Comidas c1 = new Comidas("Lazaña","Hecha a bas ede Fideos","comida1",20);
+                Comidas c2 = new Comidas("Ceviche","con arto pescado y picantito","comida2",23);
+                Comidas c3 = new Comidas("Causa","bien taipao","comida3",43);
+                Comidas c4 = new Comidas("Rocoto Relleno","con arto relleno xd","comida4",35);
+                Comidas c5 = new Comidas("Juane","bien rico ya vuelta xd","comida5",30);
+                Comidas c6 = new Comidas("Arroz con pollo","con una buena presa","comida6",25);
+
+
+                ConexionDB.getInstancia(Login.this).daoC().create(c1);
+                ConexionDB.getInstancia(Login.this).daoC().create(c2);
+                ConexionDB.getInstancia(Login.this).daoC().create(c3);
+                ConexionDB.getInstancia(Login.this).daoC().create(c4);
+                ConexionDB.getInstancia(Login.this).daoC().create(c5);
+                ConexionDB.getInstancia(Login.this).daoC().create(c6);
 
                 for (Bebidas be:ConexionDB.getInstancia(Login.this).dao().listar()
                      ) {
