@@ -48,8 +48,7 @@ public class PagoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-       View view = inflater.inflate(R.layout.fragment_pago, container, false);
+        View view = inflater.inflate(R.layout.fragment_pago, container, false);
         textInputLayout = view.findViewById(R.id.menu_drop);
         autoCompleteTextView = view.findViewById(R.id.drop_items);
         textView = view.findViewById(R.id.itemSelected);
@@ -57,7 +56,7 @@ public class PagoFragment extends Fragment {
         btnconfirmar = view.findViewById(R.id.btnconfirmar);
         btnbebidas = view.findViewById(R.id.btnbebidas);
         btnplatos = view.findViewById(R.id.btnplatos);
-        //txvpreciop = findViewById(R.id.txvprecio);
+        txvpreciop = view.findViewById(R.id.txvprecio);
 
 
         bfecha = (Button) view.findViewById(R.id.bfecha);
