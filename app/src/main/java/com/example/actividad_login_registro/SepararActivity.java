@@ -2,9 +2,11 @@ package com.example.actividad_login_registro;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
@@ -44,8 +46,6 @@ public class SepararActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_separar);
-        //enlazar_controles();
-
         fragmentbebidas = new BebidaFragment();
         fragmentComida = new ComidaFragment();
         fragmentPago = new PagoFragment();
@@ -117,9 +117,34 @@ public class SepararActivity extends AppCompatActivity implements View.OnClickLi
                 }
 
             });*/
+        Bundle bundle = getIntent().getExtras();
+        double precio = bundle.getDouble("precio");
+        System.out.println(precio);
+
+
+
+        PagoFragment pagoFragment = new PagoFragment();
+        Bundle bnd = new Bundle();
+        bnd.putDouble("preciop",precio);
+
+        pagoFragment.setArguments(bnd);
+
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(R.id.fragmentsepararactivity,pagoFragment,null);
+        fragmentTransaction.commit();
+        //mostrarDatos(precio);
+
+        /*public double getMyData(){
+            return precio;
+        }*/
 
     }
 
+    /*void mostrarDatos(double precio){
+        PagoFragment pagoFragment = (PagoFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentsepararactivity);//accede al fragment mediante su id
+        pagoFragment.mostrarprecio(precio);
+    }*/
 
     private void init(){
         numcuenta = findViewById(R.id.numcuenta);

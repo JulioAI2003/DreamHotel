@@ -56,8 +56,9 @@ public class Detalle_hotel_Activity extends AppCompatActivity {
 
         btnseparar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+                public void onClick(View view) {
                 Intent in = new Intent(Detalle_hotel_Activity.this,SepararActivity.class);
+                in.putExtra("precio",precio);
                 //iniciar el intent
                 startActivity(in);
             }

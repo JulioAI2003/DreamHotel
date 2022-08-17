@@ -161,7 +161,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="248dp"
             android:layout_marginBottom="27dp"
-            android:onClick="Registrar"
+            android:onClick="RegistrarPago"
             android:text="@string/button" />
 
         <TextView
@@ -176,14 +176,13 @@
             android:textSize="20dp" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/totaltxt"
             android:layout_width="135dp"
             android:layout_height="45dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="70dp"
-            android:text="S/350"
             android:textSize="20dp" />
 
 
