@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,12 +32,18 @@ public class Detalle_hotel_Activity extends AppCompatActivity {
         TextView descripcionD = findViewById(R.id.txvdescripcion);
         Button btnseparar = findViewById(R.id.btnseparar);
 
-
         nombreD.setText(nombre);
         imagenD.setImageResource(imagen);
         precioD.setText(Double.toString(precio));
         descripcionD.setText(descripcion);
 
+
+        /*ibbebidas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mostrarDatos(nombreD.getText().toString());
+            }
+        });*/
 
         Button btnsalir = findViewById(R.id.btnsalir);
         btnsalir.setOnClickListener(new View.OnClickListener() {
@@ -49,12 +56,16 @@ public class Detalle_hotel_Activity extends AppCompatActivity {
 
         btnseparar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+                public void onClick(View view) {
                 Intent in = new Intent(Detalle_hotel_Activity.this,SepararActivity.class);
+                in.putExtra("precio",precio);
                 //iniciar el intent
                 startActivity(in);
             }
         });
-
     }
+    /*void mostrarDatos(String datos){
+        HotelDFragment hotelDFragment = (HotelDFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);//accede al fragment mediante su id
+        hotelDFragment.mostrarSeccion(datos);
+    }*/
 }

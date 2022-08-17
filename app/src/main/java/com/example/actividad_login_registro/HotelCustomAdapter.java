@@ -1,6 +1,7 @@
 package com.example.actividad_login_registro;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +28,7 @@ public class HotelCustomAdapter extends RecyclerView.Adapter<HotelCustomAdapter.
         private ImageView imagen;
         Button btndetalles;
         RatingBar rbestrellas;
+        Activity activity;
 
         // constructor de ViewHolder que toma los datos y los guarda en su atributo respectivo
         public ViewHolder(@NonNull View itemView){
@@ -36,8 +38,6 @@ public class HotelCustomAdapter extends RecyclerView.Adapter<HotelCustomAdapter.
             imagen = itemView.findViewById(R.id.ivimagenCard);
             btndetalles = itemView.findViewById(R.id.btndetalles);
             rbestrellas = itemView.findViewById(R.id.rbestrellas);
-
-
 
         }
     }
@@ -54,7 +54,7 @@ public class HotelCustomAdapter extends RecyclerView.Adapter<HotelCustomAdapter.
         //LayoutInflater: tomar un elemento xml(layout.xml) y cargarlo como un objeto visual para que se pueda utilizar
         //inflate: carga en memoria el layout que se quiere mostrar
         //la cual se mostrara en un objeto de tipo View
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.hotel_card,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_hotel,parent,false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
@@ -79,9 +79,8 @@ public class HotelCustomAdapter extends RecyclerView.Adapter<HotelCustomAdapter.
         holder.btndetalles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { //envia los datos mediante variables ala vista detalle
-                Intent intent = new Intent(v.getContext(), Detalle_hotel_Activity.class);
+                Intent intent = new Intent(v.getContext(),Detalle_hotel_Activity.class);
                 intent.putExtra("Nombre",nombreHotel);
-
                 intent.putExtra("Imagen",imagen);
                 intent.putExtra("descripcion",descripcion);
                 intent.putExtra("precio",precio);

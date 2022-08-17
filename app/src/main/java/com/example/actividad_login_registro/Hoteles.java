@@ -2,21 +2,16 @@ package com.example.actividad_login_registro;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.actividad_login_registro.model.Hotel;
 
-import java.io.CharArrayReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +35,6 @@ public class Hoteles extends AppCompatActivity {
         char l1 = Character.toUpperCase(part1.charAt(0));
         String part = part1.replace(part1.charAt(0), l1);
 
-        System.out.println(part);
         Toast.makeText(this, "Bienvenido: " + part, Toast.LENGTH_SHORT).show();
         I_Usuario.setText(part);
         ibsalir.setOnClickListener(new View.OnClickListener() {
@@ -61,18 +55,15 @@ public class Hoteles extends AppCompatActivity {
         hoteles.add(new Hotel("Matrimonio",R.drawable.hotel5,"Aire acondicionado incluido con piscina,",60.00,5));
 
         return hoteles;
-
-
     }
+
+
     void EnlazarControles() {
         recyclerViewhotel = findViewById(R.id.recyclerhoteles);
-
         recyclerViewhotel.setLayoutManager(new LinearLayoutManager(this));
         adaptadorhotel = new HotelCustomAdapter(ObtenerHoteles());
         recyclerViewhotel.setAdapter(adaptadorhotel);
-
         I_Usuario = findViewById(R.id.I_Usuario);
         ibsalir = findViewById(R.id.ibsalir);
     }
-
 }
